@@ -1,0 +1,107 @@
+a {color: #fff; text-decoration: none;}
+a:hover {text-decoration: none; cursor: pointer;}
+body {background: url(bkg.jpg); margin: 0; background-size: auto; background-position: center center;}
+* {font-family: 'Montserrat', sans-serif;}
+#wrapper {width: 100%; max-width: 85%; margin: 0 auto;}
+
+svg g rect {fill: rgba(225, 225, 225, 0.2) !important; stroke: none !important;}
+#timeline > div > div > div > div svg g:nth-of-type(1) rect:nth-child(2n) {fill: none !important; stroke: none !important;}
+
+#timeline > div > div > div > div svg g:nth-of-type(5) text {display: none !important;}
+
+svg g:nth-of-type(3) rect, svg g:nth-of-type(4) rect:hover {display: block !important;}
+svg g:nth-of-type(3) rect {fill: #48B73E !important; rx: 25; ry: 25; stroke: #fff !important; stroke-width: 5px; width: 17px; height: 17px;}
+svg g:nth-of-type(3) text {display: none !important;}
+
+
+svg g path {stroke: #fff; stroke-width: 1 !important;}
+svg g:nth-of-type(1) text, svg g:nth-of-type(2) text {fill: #fff;}
+
+
+#timeline-wrap {width: 100%; overflow: scroll; float: left; margin: 2% 0;}
+#timeline-wrap::-webkit-scrollbar {display: none;}
+#timeline-wrap::-webkit-scrollbar-button {display: none;}
+#timeline-wrap::-webkit-scrollbar-track {display: none;}
+#timeline-wrap::-webkit-scrollbar-track-piece {display: none;}
+#timeline-wrap::-webkit-scrollbar-thumb {display: none;}
+#timeline-wrap::-webkit-scrollbar-corner {display: none;}
+#timeline-wrap::-webkit-resizer {display: none;}
+/*#timeline > div > div {background: url(linesnew-01.svg); background-size: 30%;}*/
+svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
+.header, .footer, .header .tophead, .header .filters {width: 100%; float: left;}
+.tophead div {width: 33%; float: left;}
+.tophead .submit {text-align: center;}
+.tophead .filter-trigger {text-align: right;}
+.header .logo {padding: 4px 0;}
+.header .logo img {width: 100%; max-width: 300px;}
+.tophead {padding: 2% 0;}
+.icon {width: 30px; height: 30px; display: inline-block;}
+.icon img {width: 100%; height: auto;}
+.submit a {font-size: 14px; display: inline-block; position: relative;}
+.submit .link {top: -9px; left: 10px; position: relative;}
+.filter-trigger p {font-size: 16px; display: inline-block; position: relative; top: -9px; right: 10px; color: #fff; margin: 0;}
+.filters {position: relative;}
+.filters div {width: 23%; float: left; text-align: center;padding: 1%;}
+.filters .over {position: absolute; top: 0; left: 0; background: #000; width: 100%; height: 100%; padding: 0; opacity: 0.35; border-radius: 10px 0px 10px 10px;}
+.filters div a {display: inline-block; text-align: left; position: relative;}
+.filters div a:after {content: '>'; color:grey; position: absolute; right: 0; top: 15%; font-size: 22px; font-weight: 300; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); -o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg);}
+.filters div a span {width: 100%; font-size: 14px; display: inline-block; color:grey}
+.filters div a span.val {font-weight: 600; font-size: 18px;}
+.footer .submit {text-align: left;}
+.footer .showing {text-align: right;}
+.footer .showing a {cursor: default;}
+.showing .link {left: -10px;}
+#showing {font-weight: 600;}
+#skip {text-align: center; color: #FFFFFF; width:60%}
+#skip .arrows {border: 2px solid #fff; width: auto; border-radius: 33px; padding: 4px; float: none; width: auto; display: inline-block;}
+#skip .arrows a {width: 50px; height: 50px; display: inline-block; border: 2px solid #fff; border-radius: 100%; position: relative;}
+#skip .arrows a .icon {margin: 30% 38%; -moz-transform: rotate(45deg); -webkit-transform: rotate(45deg); -o-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); width: 20px; height: 20px;}
+#skip .arrows #next .icon {-moz-transform: rotate(-135deg); -webkit-transform: rotate(-135deg); -o-transform: rotate(-135deg); -ms-transform: rotate(-135deg); transform: rotate(-135deg); margin: 30% 0%;}
+#skip .arrows a .over {position: absolute; background: #000; width: 100%; height: 100%; top: 0; left: 0; border-radius: 100%; opacity: 0;}
+#skip .arrows a:hover .over {opacity: 0.35;}
+#skip p {font-size: 15px;}
+
+#overlay {position: fixed; top: 0; left: 0; width: 100%;  height: 100%; background: #000; opacity: 0.6; z-index: 2;}
+#pop {position: absolute; top: 20%; left: 28%; background: #fff; padding: 2% 3%; color: #333; max-width: 40%; text-align: center; z-index: 3;}
+.action {display: inline-block; padding: 2% 4%; background: #B4B738; border-radius: 4px; text-transform: uppercase;}
+.mobile {display: none;}
+
+.z1m2pop {padding: 20px;}
+.z1m2pop .wrap {padding: 0; margin: 0 0 10px 0; position: relative;}
+.z1m2pop p {display: inline-block; margin: 0; margin: -10px 0 0 0; position: relative; top: -5px; left: 0px;}
+.z1m2pop .head {font-weight: bold;}
+.popimg {width: 20px; height: 20px; display: inline-block; margin: 0 10px 0 0;}
+.popimg img {width: 100%; height: auto; }
+
+@media (max-width: 768px) {
+    #wrapper {max-width: 95%;}
+    .filters div a span.val {font-size: 14px;}
+    .header .logo {margin-top: 5px;}
+    .tophead .submit {text-align: right;}
+    .footer.tophead {display: flex; flex-wrap: wrap;}
+    .footer.tophead .submit {width: 50% !important; text-align: left; order: 1;}
+    .footer.tophead #skip {order: 3; width: 100%;}
+    .footer.tophead .showing {width: 50% !important;; text-align: right; order: 2;}
+    #pop {left: 18%; max-width: 60%;}
+    #hallofhame {padding: 0; margin: 0;}
+}
+
+@media (max-width: 600px) {
+    .tophead div {width: 100%;}
+    .header .logo {margin-top: 0; text-align: center;}
+    .tophead .submit {display: none;}
+    .tophead .filter-trigger {text-align: left;}
+    .tophead .filter-trigger a {display: flex; flex-wrap: wrap;}
+    .tophead .filter-trigger a p {order: 2; top: 8px; font-size: 12px; left: 6px;}
+    .filters div {display: none;}
+    .filters div:nth-of-type(2) {display: block; background: #000; border-radius: 4px; opacity: 0.35; width: 100%; padding: 1% 0;}
+    .filters div a span {width: auto; color: #fff;}
+    .filters div a {width: 94%; padding: 0 2%;}
+    .filters div a:after {top: -3px;}
+    .filters {position: absolute; top: 80%; width: 63% !important; right: 0;}
+    .header {position: relative;}
+    .mobile {display: block;}
+    span.mobile {color: #fff; font-size: 13px; text-align: center; border-bottom: 1px solid #cfcfcf; padding: 0 0 3% 0; margin: 0 0 3% 0;}
+    #pop {left: 5%; max-width: 85%;}
+    .footer.tophead .showing {display: block; width: 100% !important; text-align: center;}
+}
