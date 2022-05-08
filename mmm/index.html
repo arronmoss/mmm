@@ -5,7 +5,7 @@
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-XXXX');</script>
+    })(window,document,'script','dataLayer','GTM-PMJ3GGG');</script>
     <!-- End Google Tag Manager -->
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -23,12 +23,12 @@
         ];
         //https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec
         // This is the MMM endpoint
-		var testUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?mode=test";
-		var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec";
+		//var testUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?mode=test";
+		var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?team=Table-Mini-A";
 		var container = document.getElementById('timeline');
 		var chart = new google.visualization.Timeline(container);
 		var dataTable = new google.visualization.DataTable();
-		dataTable.addColumn({ type: 'string', id: 'Website' });
+		dataTable.addColumn({ type: 'string', id: 'Team' });
 		dataTable.addColumn({ type: 'string', id: 'Version' });
 		dataTable.addColumn({'type': 'string', 'role': 'tooltip', 'p': {'html': true}});
 		dataTable.addColumn({ type: 'date', id: 'Start' });
@@ -38,7 +38,7 @@
 		var deployments = new Array();
 
 		$.getJSON( liveUrl , function( data ) {
-			//console.log(data);
+			console.log(data);
 			var items = [];
 			var hourcounter = 1;
 			$.each( data, function( key, val ) {
@@ -241,6 +241,10 @@ return;
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMJ3GGG"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div id="wrapper">
 
     <div class="header">
@@ -248,7 +252,7 @@ return;
             <div class="logo">
                 <img src="logo-01.svg" alt="M2 Deployments" />
             </div>
-			<span class="mobile">M2deployments.info is a site aimed to throw a spotlight on the amazing capabilities of Magento 2 and in particular the agencies, individuals, systems or attributes which are associated with it</span>
+			<span class="mobile">MMM diddly</span>
             <div class="submit">
                 <a href="mailto:submit@m2deployments.info?Subject=Submission"><span class="icon"><img src="icons/site-01.svg" alt="Submit a site" /></span><span class="link">Submit a site</span></a>
             </div>
@@ -295,22 +299,11 @@ return;
         </div>
 
         <div id="skip">
-			<H2>Magento 2 Deployments Registry</H2>
-			M2deployments.info is a site aimed to throw a spotlight on the amazing capabilities of Magento 2 and in particular the agencies, individuals, systems or attributes which are associated with those
-			who are leading the way with the platform, releasing code often and demonstrating agile, continuous platform improvements to illustrate why Magento 2 is a world-leading platform.
-			<H3>Top 5 Magento 2 sites deploying most often</H3>
-			<ul id="hallofhame" style="list-style: none">
-			</ul>
-			<!--
-            <div class="arrows">
-                <a id="prev"><span class="over"></span><span class="icon"><img src="icons/arrow-01.svg" alt="" /></span></a>
-                <a id="next"><span class="over"></span><span class="icon"><img src="icons/arrow-01.svg" alt="" /></span></a>
-            </div>
-            -->
+
+
         </div>
 
         <div class="submit showing" style="width:20%">
-            <a><span class="link">Showing <span id="showing">4 sites</span></span><span class="icon"><img src="icons/site-01.svg" /></span></a>
         </div>
     </div>
 
