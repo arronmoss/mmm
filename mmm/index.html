@@ -29,18 +29,12 @@
           data.addColumn('number', 'Points');
 
 	      
-	      $.getJSON( liveUrl , function( data ) {
-			console.log(data);
-
-			//var items = [];
-			//$.each( data, function( key, val ) {
-			//    pish.push([ val[1],val[2],val[3],val[4] ]);
-			//});
+	  $.getJSON( liveUrl , function( output ) {
+	      console.log(output);
               //dataTable.addRows(pish);
-              dataTable.addRows(data);
+              data.addRows(output);
 
-	      
-	      });
+	   });
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
