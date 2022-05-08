@@ -7,11 +7,13 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-PMJ3GGG');</script>
     <!-- End Google Tag Manager -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link href="/mmm/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript">
-	    <!--
+
       var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?team=Table-Mini-A";
 
       google.charts.load('current', {'packages':['table']});
@@ -20,39 +22,31 @@
       function drawTable() {
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Team');
-        data.addColumn('number', 'Points');
-        data.addColumn('boolean', 'Full Time Employee');
-	      
-       /* data.addRows([
-          ['Mike',  {v: 10000, f: '$10,000'}, true],
-          ['Jim',   {v:8000,   f: '$8,000'},  false],
-          ['Alice', {v: 12500, f: '$12,500'}, true],
-          ['Bob',   {v: 7000,  f: '$7,000'},  true]
-        ]);
-	*/
+          data.addColumn('number', 'MP');
+          data.addColumn('number', 'GF');
+          data.addColumn('number', 'GA');
+          data.addColumn('number', 'GD');
+          data.addColumn('number', 'Points');
+
 	      
 	      $.getJSON( liveUrl , function( data ) {
 			console.log(data);
-		      
-			var items = [];
-			$.each( data, function( key, val ) {			
 
-			    pish.push([ webAddress, val[1] ]);
+			//var items = [];
+			//$.each( data, function( key, val ) {
+			//    pish.push([ val[1],val[2],val[3],val[4] ]);
+			//});
+              //dataTable.addRows(pish);
+              dataTable.addRows(data);
 
-			});
-			console.log(pish);
-			dataTable.addRows(pish);
 	      
-	      
-	      }
+	      });
 
         var table = new google.visualization.Table(document.getElementById('table_div'));
         table.draw(data, {showRowNumber: true, width: '100%', height: '100%'});
       }
 	    
-	    
-	    
--->
+
 </script>	
 </head>
 	
