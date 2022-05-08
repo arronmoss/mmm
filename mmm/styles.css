@@ -1,6 +1,6 @@
 a {color: #fff; text-decoration: none;}
 a:hover {text-decoration: none; cursor: pointer;}
-body {background: url(bkg.png); margin: 0; background-size: auto; background-position: center center;}
+body {background: url(bg.png); margin: 0; background-size: auto; background-position: center center;}
 * {font-family: 'Montserrat', sans-serif;}
 #wrapper {width: 100%; max-width: 85%; margin: 0 auto;}
 
