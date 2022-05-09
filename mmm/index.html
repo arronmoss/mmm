@@ -15,32 +15,14 @@
     <script type="text/javascript">
 
       google.charts.load('current', {'packages':['table']});
-      google.charts.setOnLoadCallback(drawTable);
+      google.charts.setOnLoadCallback(drawTableA);
+      google.charts.setOnLoadCallback(drawTableB);
 
-      function drawTestTable() {
-
-          var data = new google.visualization.DataTable();
-          data.addColumn('string', 'Team');
-          data.addColumn('number', 'MP');
-          data.addColumn('number', 'GF');
-          data.addRows([
-              ['Mike', 2,2], // Example of specifying actual and formatted values.
-              ['Steve', 2,2], // Example of specifying actual and formatted values.
-              ['Phil', 2,2], // Example of specifying actual and formatted values.
-              ['Arron', 2,2], // Example of specifying actual and formatted values.
-              ['Ben', 2,2]
-
-          ]);
-          var table = new google.visualization.Table(document.getElementById('table_div'));
-          table.draw(data, {showRowNumber: false, width: '100%', height: '100%'});
-      }
-
-
-      function drawTable() {
+      function drawTableA() {
           var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-A";
           var table = new google.visualization.Table(document.getElementById('table_div'));
           var dataTable = new google.visualization.DataTable();
-          dataTable.addColumn('string', 'Team');
+          dataTable.addColumn('string', 'Group A');
           dataTable.addColumn('number', 'MP');
           dataTable.addColumn('number', 'GF');
           dataTable.addColumn('number', 'GA');
@@ -48,10 +30,7 @@
           dataTable.addColumn('number', 'Pts');
 
           var leagueTable = [];
-
-
           $.getJSON( liveUrl , function( data ) {
-
               $.each( data, function( key, team ) {
                   console.log("we should be putting data into PISH");
                   leagueTable.push( team );
@@ -61,12 +40,37 @@
           });
       }
 
+      function drawTableB() {
+          var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-B";
+          var table = new google.visualization.Table(document.getElementById('table_div_b'));
+          var dataTable = new google.visualization.DataTable();
+          dataTable.addColumn('string', 'Group B');
+          dataTable.addColumn('number', 'MP');
+          dataTable.addColumn('number', 'GF');
+          dataTable.addColumn('number', 'GA');
+          dataTable.addColumn('number', 'GD');
+          dataTable.addColumn('number', 'Pts');
+
+          var leagueTable = [];
+          $.getJSON( liveUrl , function( data ) {
+              $.each( data, function( key, team ) {
+                  console.log("we should be putting data into PISH");
+                  leagueTable.push( team );
+              });
+              dataTable.addRows(leagueTable);
+              table.draw(dataTable, {showRowNumber: true, width: '100%', height: '50%'});
+          });
+      }
+
+
+
 </script>	
 </head>
 <body>
 
-	<h1>Team Name</h1>
-    <div id="table_div"></div>
+<h1>MINI</h1>
+<div style="float:left" id="table_div"></div>
+<div style="float:right" id="table_div_b"></div>
 </body>
 	
 </html>
