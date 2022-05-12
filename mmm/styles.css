@@ -116,6 +116,7 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 
 /* New Styles */
 
+
 #wrapper {width: 100%; max-width: 1000px; margin: 0 auto;}
 .header {float: left; width: 100%;background: #175972; }
 .messages {padding: 7px 0;
@@ -171,7 +172,7 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
     border-top: 1px solid #eee !important;
 }
 .google-visualization-table td {
-    padding: 7px !important;
+    padding: 10px !important;
 }
 
 .google-visualization-table-type-number {
@@ -184,10 +185,18 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 }
 
 .flag:before {
-    content: 'hi';
+        content: '';
     display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    position: absolute;
+    left: 5px;
+    top: 7px;
     background: url('/mmm/images/defaultbadge.png');
+}
+
+.google-visualization-table td.flag {
+    position: relative;
+    padding-left: 32px !important;
 }
