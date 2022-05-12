@@ -117,15 +117,22 @@
 
 <script>
 jQuery(document).ready(function(){
-	console.log('ready');
+	console.log('ready now');
 	
 	var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
 	console.log(randomStringForQueryString);
 	
 	var teamNameInTable = jQuery('.google-visualization-table-td');
-	jquery(teamNameInTable).each(function(){
-		var teamName = jQuery(this).html();
-		console.log(teamName);
+	jQuery(teamNameInTable).each(function(){
+		if (jQuery(this).hasClass('google-visualization-table-type-number')) {
+			continue;
+		} else {
+			jQuery(this).addClass('flagsean');
+			var teamName = jQuery(this).html();
+			var teamNameClass = teamName + '-flag';
+			console.log(teamName);
+			jQuery(this).addClass(teamNameClass);
+		}
 	});
 	
 });
