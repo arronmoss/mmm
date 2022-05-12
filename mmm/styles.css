@@ -118,9 +118,11 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 .header {float: left; width: 100%;background: #175972;}
 .messages {float: left; width: 100%;background: #9d1915; color: #fff; text-transform: uppercase; font-weight: bold;}
 .content {float: left; width: 100%;}
-.menu {width: 30%;float: left;}
-.menu img {max-width: 50px; padding: 20px 30px;}
-.logocontainer {width: 40%;float: left;}
-.logocontainer img {max-width: 120px;}
-.refresh {width: 30%;float: left;}
+.logocontainer {width: 30%;float: left;}
+.logocontainer img {max-width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+.maintitle {width: 50%; float: left;}
+.refresh {width: 20%;float: left;}
 .refresh img {max-width: 50px; padding: 20px 30px;}
