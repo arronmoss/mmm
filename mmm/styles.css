@@ -107,7 +107,8 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 }
 
 
-#table_div .google-visualization-table-table {
+#table_div .google-visualization-table-table,
+#table_div_b .google-visualization-table-table {
     font-size: 9pt;
 }
 
@@ -180,4 +181,13 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 .google-visualization-table-tr-head th:first-child {
     text-align: left !important;
     padding-left: 8px !important;
+}
+
+.flag:before {
+    content: 'hi';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    background: url('/mmm/images/defaultbadge.png');
 }
