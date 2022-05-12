@@ -113,5 +113,22 @@
 
 
 </body>
+
+
+<script>
+jQuery(document).ready(function(){
+	console.log('ready');
+	
+	var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
+	console.log(randomStringForQueryString);
+	
+	var teamNameInTable = jQuery('.google-visualization-table-td');
+	jquery(teamNameInTable).each(function(){
+		var teamName = jQuery(this).html();
+		console.log(teamName);
+	});
+	
+});
+</script>
 	
 </html>
