@@ -139,11 +139,20 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 .maintitle img {width: 100%;
     margin-top: 12px;
 }
-.refresh {width: 20%;float: left;}
-#refresh {display: block;}
-.refresh img {    max-width: 30px;
+
+.refresh {
+	width: 20%;float: left;
+}
+
+#refresh {
+	display: block;
+}
+
+.refresh img {    
+	max-width: 30px;
     padding: 20px 25px;
 }
+
 .comp-title {
     text-align: center;
     display: block;
@@ -151,12 +160,14 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
     font-weight: bold;
     font-size: 19px;
 }
+
 .table-wrapper {
-	    background: #fff;
+	background: #fff;
     margin: 10px 10px 20px 10px;
 }
+
 .table-wrapper > span {
-	    display: block;
+	display: block;
     text-align: center;
     padding: 10px;
     font-weight: bold;
@@ -188,7 +199,7 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-size: 20px;
+    background-size: 20px !important;
     position: absolute;
     left: 5px;
     top: 7px;
@@ -198,4 +209,45 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 .google-visualization-table td.flag {
     position: relative;
     padding-left: 32px !important;
+}
+
+
+.France-flag:before {
+	background: url('/mmm/images/flags/france.png');
+}
+
+.Belgium-flag:before {
+	background: url('/mmm/images/flags/belgium.png');
+}
+
+.Ukraine-flag:before {
+	background: url('/mmm/images/flags/ukraine.png');
+}
+
+.England-flag:before {
+	background: url('/mmm/images/flags/england.png');
+}
+
+.Brazil-flag:before {
+	background: url('/mmm/images/flags/brazil.png');
+}
+
+.Spain-flag:before {
+	background: url('/mmm/images/flags/spain.png');
+}
+
+.Portugal-flag:before {
+	background: url('/mmm/images/flags/portugal.png');
+}
+
+.Ireland-flag:before {
+	background: url('/mmm/images/flags/ireland.png');
+}
+
+.Holland-flag:before {
+	background: url('/mmm/images/flags/holland.png');
+}
+
+.Germany-flag:before {
+	background: url('/mmm/images/flags/germany.png');
 }
