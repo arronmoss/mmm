@@ -114,19 +114,16 @@
 
 </body>
 
-
 <script>
 jQuery(document).ready(function(){
-	console.log('ready now');
+	console.log('ready again');
 	
 	var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
 	console.log(randomStringForQueryString);
 	
 	var teamNameInTable = jQuery('.google-visualization-table-td');
 	jQuery(teamNameInTable).each(function(){
-		if (jQuery(this).hasClass('google-visualization-table-type-number')) {
-			continue;
-		} else {
+		if (!jQuery(this).hasClass('google-visualization-table-type-number')) {
 			jQuery(this).addClass('flagsean');
 			var teamName = jQuery(this).html();
 			var teamNameClass = teamName + '-flag';
