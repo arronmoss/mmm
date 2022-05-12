@@ -80,7 +80,7 @@
 			<img src="/mmm/images/shieldlogo.png" />
 		</div>
 		<div class="refresh">
-			<a id="refresh"><img src="/mmm/images/reload.svg" /></a>
+			<a id="refresh" href="/"><img src="/mmm/images/reload.svg" /></a>
 		</div>
 	</div>
 </div>
@@ -114,23 +114,48 @@
 
 </body>
 
+
 <script>
 jQuery(document).ready(function(){
-	console.log('ready again');
-	
-	var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
-	console.log(randomStringForQueryString);
-	
-	var teamNameInTable = jQuery('.google-visualization-table-td');
-	jQuery(teamNameInTable).each(function(){
-		if (!jQuery(this).hasClass('google-visualization-table-type-number')) {
-			jQuery(this).addClass('flagsean');
-			var teamName = jQuery(this).html();
-			var teamNameClass = teamName + '-flag';
-			console.log(teamName);
-			jQuery(this).addClass(teamNameClass);
-		}
+
+	// Wait for google tables to appear in DOM
+	var waitForEl = function(selector, callback) {
+	  if (jQuery(selector).length) {
+	    callback();
+	  } else {
+	    setTimeout(function() {
+	      waitForEl(selector, callback);
+	    }, 1000);
+	  }
+	};
+			
+	waitForEl('.google-visualization-table-table', function() {
+		addClassesToTablesForFlags();
 	});
+
+	
+	function setNewQueryStringOnRefreshButton() {
+		console.log('new string set');
+		var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
+		var refreshButton = jQuery('#refresh');
+		var newHref = '/?' + randomStringForQueryString;
+		jQuery(refreshButton).attr('href', newHref);
+	}
+	
+	function addClassesToTablesForFlags() {
+		var teamNameInTable = jQuery('.google-visualization-table-td');
+		jQuery(teamNameInTable).each(function(){
+			if (!jQuery(this).hasClass('google-visualization-table-type-number')) {
+				jQuery(this).addClass('flag');
+				var teamName = jQuery(this).html();
+				var teamNameClass = teamName + '-flag';
+				console.log(teamName);
+				jQuery(this).addClass(teamNameClass);
+			}
+		});
+	}
+	
+	setNewQueryStringOnRefreshButton();
 	
 });
 </script>
