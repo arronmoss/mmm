@@ -117,7 +117,7 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 
 #wrapper {width: 100%; max-width: 1000px; margin: 0 auto;}
 .header {float: left; width: 100%;background: #175972; }
-.messages {padding: 10px 0;
+.messages {padding: 7px 0;
     float: left;
     width: 100%;
     color: #fff;
@@ -129,9 +129,10 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
 .messages p {margin: 0;}
 .content {float: left; width: 100%;}
 .logocontainer {width: 25%;float: left;}
-.logocontainer img {max-width: 70px;
+.logocontainer img {    max-width: 60px;
     margin: 0 auto;
     display: block;
+    margin-top: 4px;
 }
 .maintitle {width: 55%; float: left;}
 .maintitle img {width: 100%;
@@ -166,12 +167,17 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
     background: #fff !important;
     font-weight: normal;
     color: #999;
-    border-top: 1px solid #eee;
+    border-top: 1px solid #eee !important;
 }
 .google-visualization-table td {
-    padding: 7px;
+    padding: 7px !important;
 }
 
 .google-visualization-table-type-number {
     text-align: center !important;
+}
+
+.google-visualization-table-tr-head th:first-child {
+    text-align: left !important;
+    padding-left: 8px !important;
 }
