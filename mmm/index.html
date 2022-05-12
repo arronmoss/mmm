@@ -22,7 +22,7 @@
           var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-A";
           var table = new google.visualization.Table(document.getElementById('table_div'));
           var dataTable = new google.visualization.DataTable();
-          dataTable.addColumn('string', 'Group A');
+          dataTable.addColumn('string', 'Team');
           dataTable.addColumn('number', 'MP');
           dataTable.addColumn('number', 'GF');
           dataTable.addColumn('number', 'GA');
@@ -44,7 +44,7 @@
           var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-B";
           var table = new google.visualization.Table(document.getElementById('table_div_b'));
           var dataTable = new google.visualization.DataTable();
-          dataTable.addColumn('string', 'Group B');
+          dataTable.addColumn('string', 'Team');
           dataTable.addColumn('number', 'MP');
           dataTable.addColumn('number', 'GF');
           dataTable.addColumn('number', 'GA');
@@ -66,11 +66,72 @@
 
 </script>	
 </head>
+
 <body>
 
-<h1>MINI</h1>
-<div style="float:left" id="table_div"></div>
-<div style="float:right" id="table_div_b"></div>
+<div class="header">
+	<div class="container">
+		<div class="menu">
+			<a id="menu"><img src="/images/menu.svg" /></a>
+		</div>
+		<div class="logocontainer">
+			<img src="/images/logo.png" alt="Buxton JFC" />
+		</div>
+		<div class="refresh">
+			<a id="refresh"><img src="/images/reload.svg" /></a>
+		</div>
+	</div>
+</div>
+
+<div class="messages">
+	<div class="container">
+		<p>Cake stall now open!</p>
+	</div>
+</div>
+
+<div class="content">
+	<div class="container">
+	
+		<span class="comp-title">Mini Tournament</span>
+	
+		<div class="table-wrapper">
+			<span>Group A</span>
+			<div id="table_div"></div>
+		</div>
+		
+		<div class="table-wrapper">
+			<span>Group B</span>
+			<div id="table_div_b"></div>
+		</div>
+		
+	</div>	
+</div>
+
+
 </body>
 	
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
