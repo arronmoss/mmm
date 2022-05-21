@@ -90,7 +90,7 @@
           var leagueTable = [];
           $.getJSON( liveUrl , function( data ) {
               $.each( data, function( key, team ) {
-                  console.log("we should be putting data into PISH");
+                  //console.log("we should be putting data into PISH");
                   leagueTable.push( team );
               });
               dataTable.addRows(leagueTable);
