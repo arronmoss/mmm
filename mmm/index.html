@@ -18,8 +18,9 @@
       google.charts.setOnLoadCallback(drawTableA);
       google.charts.setOnLoadCallback(drawTableB);
       google.charts.setOnLoadCallback(drawTableFinals);
-      var allGamesPlayed = true;
-
+	    
+      var allGamesPlayed = false;
+	    
 	    
       function drawTableFinals() {
           var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Mini-Finals";
@@ -97,7 +98,7 @@
 
 
 	    
-	    jQuery(document).ready(function(){
+jQuery(document).ready(function(){
 
 	// Wait for google tables to appear in DOM
 	var waitForEl = function(selector, callback) {
@@ -112,6 +113,7 @@
 			
 	waitForEl('.google-visualization-table-table', function() {
 		addClassesToTablesForFlags();
+		checkIfFinals();
 	});
 
 	function setNewQueryStringOnRefreshButton() {
@@ -122,17 +124,17 @@
 		jQuery(refreshButton).attr('href', newHref);
 	}
 	
-	//
-	if(allGamesPlayed===false)  {
-		jQuery(this).addClass('display:none');
-		console.log('all games NOT played');
-	} else {
+	function checkIfFinals() {
+		if(allGamesPlayed===false)  {
+			jQuery(this).addClass('display:none');
+			console.log('all games NOT played');
+		}
+
+		console.log('allGamesPlayed');
+		console.log(allGamesPlayed);	
 		
 	}
-	console.log('allGamesPlayed');
-	console.log(allGamesPlayed);
-	
-	
+
 	function addClassesToTablesForFlags() {
 		var teamNameInTable = jQuery('.google-visualization-table-td');
 		jQuery(teamNameInTable).each(function(){
