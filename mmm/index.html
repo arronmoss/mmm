@@ -17,7 +17,41 @@
       google.charts.load('current', {'packages':['table']});
       google.charts.setOnLoadCallback(drawTableA);
       google.charts.setOnLoadCallback(drawTableB);
+      google.charts.setOnLoadCallback(drawTableFinals);
 
+	    
+      function drawTableFinals() {
+          var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-Finals";
+          var table = new google.visualization.Table(document.getElementById('table_finals'));
+          var dataTable = new google.visualization.DataTable();
+          dataTable.addColumn('string', 'Team');
+          dataTable.addColumn('number', 'MP');
+          dataTable.addColumn('number', 'GF');
+          dataTable.addColumn('number', 'GA');
+          dataTable.addColumn('number', 'GD');
+          dataTable.addColumn('number', 'Pts');
+
+          var leagueTable = [];
+          $.getJSON( liveUrl , function( data ) {
+              $.each( data, function( key, team ) {
+                  console.log("we should be putting data into PISH");
+                  leagueTable.push( team );
+              });
+              dataTable.addRows(leagueTable);
+              table.draw(dataTable, {showRowNumber: false, width: '100%', height: '50%'});
+          });
+      }    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
       function drawTableA() {
           var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-A";
           var table = new google.visualization.Table(document.getElementById('table_div'));
@@ -94,17 +128,32 @@
 <div class="content">
 	<div class="container">
 	
+		
+	<div id=finals" style="display:none">
+		<span class="comp-title">Final Play-Offs</span>
+		<div class="table-wrapper">
+			<span></span>
+			<div id="table_finals"></div>
+		</div>	
+	</div>		
+		
+		
+		
+		
+		
 		<span class="comp-title">Mini Tournament</span>
-	
 		<div class="table-wrapper">
 			<span>Group A</span>
 			<div id="table_div"></div>
 		</div>
-		
 		<div class="table-wrapper">
 			<span>Group B</span>
 			<div id="table_div_b"></div>
 		</div>
+		
+		
+		
+		
 		
 	</div>	
 </div>
