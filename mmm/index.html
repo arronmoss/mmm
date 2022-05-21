@@ -43,11 +43,7 @@
 	    
 	    
 	    
-	    
-	    
-	    
-	    
-	    
+	        
 	    
 	    
       function drawTableA() {
@@ -131,7 +127,7 @@
 	<div class="container">
 	
 		
-	<div id=finals"">
+	<div id="finals">
 		<span class="comp-title">Final Play-Offs</span>
 		<div class="table-wrapper">
 			<span></span>
@@ -186,12 +182,16 @@ jQuery(document).ready(function(){
 
 	
 	function setNewQueryStringOnRefreshButton() {
-		console.log('new string set');
+		//console.log('new string set');
 		var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
 		var refreshButton = jQuery('#refresh');
 		var newHref = '/mmm/?' + randomStringForQueryString;
 		jQuery(refreshButton).attr('href', newHref);
 	}
+	
+	//
+	if(allGamesPlayed===false) jQuery(this).addClass('display:none');
+	
 	
 	function addClassesToTablesForFlags() {
 		var teamNameInTable = jQuery('.google-visualization-table-td');
