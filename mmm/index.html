@@ -19,7 +19,7 @@
       google.charts.setOnLoadCallback(drawTableB);
       google.charts.setOnLoadCallback(drawTableFinals);
 	    
-      var allGamesPlayed = false;
+      var allGamesPlayed = true;
 	    
 	    
       function drawTableFinals() {
@@ -87,7 +87,7 @@
           var leagueTable = [];
           $.getJSON( liveUrl , function( data ) {
               $.each( data, function( key, team ) {
-                  //console.log("we should be putting data into PISH");
+		  if(team[1]<4) allGamesPlayed = false;
                   leagueTable.push( team );
               });
               dataTable.addRows(leagueTable);
