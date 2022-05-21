@@ -18,6 +18,7 @@
       google.charts.setOnLoadCallback(drawTableA);
       google.charts.setOnLoadCallback(drawTableB);
       google.charts.setOnLoadCallback(drawTableFinals);
+      var allGamesPlayed = true;
 
 	    
       function drawTableFinals() {
@@ -25,6 +26,7 @@
           var table = new google.visualization.Table(document.getElementById('table_finals'));
           var dataTable = new google.visualization.DataTable();
           dataTable.addColumn('string', 'Team');
+          dataTable.addColumn('number', 'Score');
           dataTable.addColumn('number', 'Score');
           dataTable.addColumn('number', 'Team');
 
@@ -62,7 +64,9 @@
           var leagueTable = [];
           $.getJSON( liveUrl , function( data ) {
               $.each( data, function( key, team ) {
-                  console.log("we should be putting data into PISH");
+                  console.log("we should be putting data into table");
+		      console.log(team);
+		      // need to check if games played NOT 4, then hide Finals table
                   leagueTable.push( team );
               });
               dataTable.addRows(leagueTable);
