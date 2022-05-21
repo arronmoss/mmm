@@ -64,11 +64,11 @@
           var leagueTable = [];
           $.getJSON( liveUrl , function( data ) {
               $.each( data, function( key, team ) {
-                  console.log("we should be putting data into table");
-		      console.log(team);
-		      console.log(team[2]);
-		      console.log(key);
-		      // need to check if games played NOT 4, then hide Finals table
+                  //console.log("we should be putting data into table");
+		  console.log('Matches Played');
+		  console.log(team[1]);
+		  // need to check if games played NOT 4, then hide Finals table
+		  if(team[1]<4) allGamesPlayed = false;
                   leagueTable.push( team );
               });
               dataTable.addRows(leagueTable);
