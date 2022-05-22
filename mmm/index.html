@@ -51,8 +51,10 @@
           dataTable.addColumn('string', 'Time');
           dataTable.addColumn('string', 'Group');
           dataTable.addColumn('string', 'Pitch');
-          dataTable.addColumn('string', 'Home');
-          dataTable.addColumn('string', 'Away');
+		  dataTable.addColumn('string', 'Home');
+		  dataTable.addColumn('string', '');
+		  dataTable.addColumn('string', 'Away');
+		  dataTable.addColumn('string', '');
 
           var leagueTable = [];
           $.getJSON( liveUrl , function( data ) {
@@ -71,7 +73,7 @@
 
 
 
-                  leagueTable.push( [team[0],team[1],team[2],team[3],team[5]] );
+                  leagueTable.push( team );
               });
               dataTable.addRows(leagueTable);
               table.draw(dataTable, {showRowNumber: false, width: '100%', height: '50%'});
