@@ -48,8 +48,8 @@
           var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Fixtures&agegroup=Mini";
           var table = new google.visualization.Table(document.getElementById('table_fixtures'));
           var dataTable = new google.visualization.DataTable();
-          dataTable.addColumn('string', 'Group');
           dataTable.addColumn('string', 'Time');
+          dataTable.addColumn('string', 'Group');
           dataTable.addColumn('string', 'Pitch');
           dataTable.addColumn('string', 'Home');
           dataTable.addColumn('string', 'Away');
@@ -57,7 +57,21 @@
           var leagueTable = [];
           $.getJSON( liveUrl , function( data ) {
               $.each( data, function( key, team ) {
-                  leagueTable.push( [team[0],team[1],team[2],team[3],team[4]] );
+				  console.log('ID TEAMS');
+				  console.log(typeof team[0]);
+				  console.log( team[0]);
+				  console.log(typeof team[1]);
+				  console.log( team[1]);
+				  console.log(typeof team[2]);
+				  console.log( team[2]);
+				  console.log(typeof team[3]);
+				  console.log( team[3]);
+				  console.log(typeof team[5]);
+				  console.log( team[5]);
+
+
+
+                  leagueTable.push( [team[0],team[1],team[2],team[3],team[5]] );
               });
               dataTable.addRows(leagueTable);
               table.draw(dataTable, {showRowNumber: false, width: '100%', height: '50%'});
