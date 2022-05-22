@@ -17,8 +17,8 @@
       google.charts.load('current', {'packages':['table']});
       google.charts.setOnLoadCallback(drawFixtures);
       google.charts.setOnLoadCallback(drawTableA);
-      //google.charts.setOnLoadCallback(drawTableB);
-      //google.charts.setOnLoadCallback(drawTableFinals);
+      google.charts.setOnLoadCallback(drawTableB);
+      google.charts.setOnLoadCallback(drawTableFinals);
 	    
       var allGamesPlayed = true;
 	    
@@ -59,20 +59,6 @@
           var leagueTable = [];
           $.getJSON( liveUrl , function( data ) {
               $.each( data, function( key, team ) {
-				  console.log('ID TEAMS');
-				  console.log(typeof team[0]);
-				  console.log( team[0]);
-				  console.log(typeof team[1]);
-				  console.log( team[1]);
-				  console.log(typeof team[2]);
-				  console.log( team[2]);
-				  console.log(typeof team[3]);
-				  console.log( team[3]);
-				  console.log(typeof team[5]);
-				  console.log( team[5]);
-
-
-
                   leagueTable.push( team );
               });
               dataTable.addRows(leagueTable);
