@@ -161,7 +161,6 @@ jQuery(document).ready(function(){
 	});
 
 	function setNewQueryStringOnRefreshButton() {
-		//console.log('new string set');
 		var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
 		var refreshButton = jQuery('#refresh');
 		var newHref = '/mmm/?' + randomStringForQueryString;
@@ -174,22 +173,29 @@ jQuery(document).ready(function(){
 			console.log('all games NOT played');
 		} else {
 			jQuery('#finals').show();
-
 		}
-
-		console.log('allGamesPlayed');
-		console.log(allGamesPlayed);	
-		
 	}
 
 	function addClassesToTablesForFlags() {
 		var teamNameInTable = jQuery('.google-visualization-table-td');
 		jQuery(teamNameInTable).each(function(){
-			if (!jQuery(this).hasClass('google-visualization-table-type-number')) {
+			//if (!jQuery(this).hasClass('google-visualization-table-type-number')) {
+			var contents = jQuery(this).html();
+			if (contents==='Ukraine' ||
+					contents==='Belgium' ||
+					contents==='Germany' ||
+					contents==='England' ||
+					contents==='Holland' ||
+					contents==='Ireland' ||
+					contents==='Spain' ||
+					contents==='France' ||
+					contents==='Brazil' ||
+					contents==='Portugal'
+			) {
 				jQuery(this).addClass('flag');
 				var teamName = jQuery(this).html();
 				var teamNameClass = teamName + '-flag';
-				console.log(teamName);
+				//console.log(teamName);
 				jQuery(this).addClass(teamNameClass);
 			}
 		});
@@ -203,7 +209,6 @@ jQuery(document).ready(function(){
 </head>
 
 <body>
-
 <div id="wrapper">
 
 <div class="header">
