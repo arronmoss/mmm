@@ -41,6 +41,29 @@
           });
       }    
 	    
+	   
+	    
+	function drawFixtures() {
+          var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Mini-Fixtures";
+          var table = new google.visualization.Table(document.getElementById('table_fixtures'));
+          var dataTable = new google.visualization.DataTable();
+          dataTable.addColumn('string', 'Group');
+          dataTable.addColumn('string', 'Time');
+          dataTable.addColumn('string', 'Pitch');
+          dataTable.addColumn('string', 'Home');
+          dataTable.addColumn('string', 'Away');
+
+          var leagueTable = [];
+          $.getJSON( liveUrl , function( data ) {
+              $.each( data, function( key, team ) {
+                  leagueTable.push( [team[0],team[1],team[2],team[3],team[4]] );
+              });
+              dataTable.addRows(leagueTable);
+              table.draw(dataTable, {showRowNumber: false, width: '100%', height: '50%'});
+          });
+      }
+	    
+	    
 	    
 	    
 	    
@@ -198,11 +221,16 @@ jQuery(document).ready(function(){
 		</div>	
 	</div>		
 		
+	<div id="fixtures">
+		<span class="comp-title">Fixtures</span>
+		<div class="table-wrapper">
+			<span></span>
+			<div id="table_fixtures"></div>
+		</div>	
+	</div>			
 		
 		
-		
-		
-		<span class="comp-title">Mini Tournament</span>
+	<span class="comp-title">Mini Tournament</span>
 		<div class="table-wrapper">
 			<span>Group A</span>
 			<div id="table_div"></div>
