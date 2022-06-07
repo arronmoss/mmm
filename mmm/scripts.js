@@ -11,7 +11,7 @@ var allGamesPlayed = true;
 
 
 function drawTableFinals() {
-    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Mini-Finals";
+    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table="+ agegroup +"-Finals";
     var table = new google.visualization.Table(document.getElementById('table_finals'));
     var dataTable = new google.visualization.DataTable();
     dataTable.addColumn('string', 'Team');
@@ -32,7 +32,7 @@ function drawTableFinals() {
 
 
 function drawFixtures() {
-    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Fixtures&agegroup=Mini";
+    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Fixtures&agegroup="+agegroup;
     var table = new google.visualization.Table(document.getElementById('table_fixtures'));
     var dataTable = new google.visualization.DataTable();
     dataTable.addColumn('string', 'Time');
@@ -61,7 +61,7 @@ function drawFixtures() {
 
 
 function drawTableA() {
-    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-A";
+    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-"+ agegroup +"-A";
     var table = new google.visualization.Table(document.getElementById('table_div'));
     var dataTable = new google.visualization.DataTable();
     dataTable.addColumn('string', 'Team');
@@ -91,7 +91,7 @@ function drawTableA() {
 }
 
 function drawTableB() {
-    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-Mini-B";
+    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-"+ agegroup +"-B";
     var table = new google.visualization.Table(document.getElementById('table_div_b'));
     var dataTable = new google.visualization.DataTable();
     dataTable.addColumn('string', 'Team');
