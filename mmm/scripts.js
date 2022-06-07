@@ -10,7 +10,6 @@ google.charts.setOnLoadCallback(drawTableFinals);
 
 var allGamesPlayed = true;
 
-
 function drawTableFinals() {
     var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table="+ agegroup +"-Finals";
     var table = new google.visualization.Table(document.getElementById('table_finals'));
@@ -137,7 +136,7 @@ jQuery(document).ready(function(){
     function setNewQueryStringOnRefreshButton() {
         var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
         var refreshButton = jQuery('#refresh');
-        var newHref = '/mmm/?' + randomStringForQueryString;
+        var newHref = '/mmm/' + agegroup + '?' + randomStringForQueryString;
         jQuery(refreshButton).attr('href', newHref);
     }
 
