@@ -1,4 +1,4 @@
-var agegroup = document.url.split('/').pop();
+var agegroup = document.location.href.split('/').pop();
 console.log(agegroup);
 
 google.charts.load('current', {'packages':['table']});
