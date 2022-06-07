@@ -136,7 +136,7 @@ jQuery(document).ready(function(){
     function setNewQueryStringOnRefreshButton() {
         var randomStringForQueryString = Math.random().toString(36).slice(2, 7);
         var refreshButton = jQuery('#refresh');
-        var newHref = '/mmm/' + agegroup + '?' + randomStringForQueryString;
+        var newHref = '/mmm/' + agegroup + '.html?' + randomStringForQueryString;
         jQuery(refreshButton).attr('href', newHref);
     }
 
