@@ -4,6 +4,7 @@ console.log(agegroup);
 
 google.charts.load('current', {'packages':['table']});
 google.charts.setOnLoadCallback(drawFixtures);
+//google.charts.setOnLoadCallback(drawTable('B'));
 google.charts.setOnLoadCallback(drawTableA);
 google.charts.setOnLoadCallback(drawTableB);
 google.charts.setOnLoadCallback(drawTableFinals);
@@ -46,7 +47,13 @@ function drawFixtures() {
     var leagueTable = [];
     $.getJSON( liveUrl , function( data ) {
         $.each( data, function( key, team ) {
-            leagueTable.push( team );
+            if(typeof team[4]==='number' && typeof team[6]==='number')  {
+                // nothing
+
+            } else {
+                leagueTable.push( team );
+
+            }
         });
         dataTable.addRows(leagueTable);
         table.draw(dataTable, {showRowNumber: false, width: '100%', height: '50%'});
@@ -55,14 +62,13 @@ function drawFixtures() {
 
 
 
+function drawTableA(what) {
+    var tablediv = 'table_div_'+ what ;
+    console.log(tablediv);
 
-
-
-
-
-function drawTableA() {
     var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-"+ agegroup +"-A";
-    var table = new google.visualization.Table(document.getElementById('table_div'));
+    var table = new google.visualization.Table(document.getElementById('table_div_A'));
+
     var dataTable = new google.visualization.DataTable();
     dataTable.addColumn('string', 'Team');
     dataTable.addColumn('number', 'MP');
@@ -78,9 +84,7 @@ function drawTableA() {
             console.log('Matches Played');
             if(typeof team[1] != 'number') {
                 team[1] = 0;team[2] = 0;team[3] = 0;team[4] = 0;team[5] = 0;
-
             }
-
             // need to check if games played NOT 4, then hide Finals table
             if(team[1]<4) allGamesPlayed = false;
             leagueTable.push( team );
@@ -92,7 +96,7 @@ function drawTableA() {
 
 function drawTableB() {
     var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-"+ agegroup +"-B";
-    var table = new google.visualization.Table(document.getElementById('table_div_b'));
+    var table = new google.visualization.Table(document.getElementById('table_div_B'));
     var dataTable = new google.visualization.DataTable();
     dataTable.addColumn('string', 'Team');
     dataTable.addColumn('number', 'MP');
@@ -104,6 +108,12 @@ function drawTableB() {
     var leagueTable = [];
     $.getJSON( liveUrl , function( data ) {
         $.each( data, function( key, team ) {
+            //console.log("we should be putting data into table");
+            console.log('Matches Played');
+            if(typeof team[1] != 'number') {
+                team[1] = 0;team[2] = 0;team[3] = 0;team[4] = 0;team[5] = 0;
+            }
+            // need to check if games played NOT 4, then hide Finals table
             if(team[1]<4) allGamesPlayed = false;
             leagueTable.push( team );
         });
