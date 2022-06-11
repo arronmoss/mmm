@@ -62,10 +62,7 @@ function drawFixtures() {
 
 
 
-function drawTableA(what) {
-    var tablediv = 'table_div_'+ what ;
-    console.log(tablediv);
-
+function drawTableA() {
     var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Table-"+ agegroup +"-A";
     var table = new google.visualization.Table(document.getElementById('table_div_A'));
 
