@@ -182,7 +182,7 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
     border-top: 1px solid #eee !important;
 }
 .google-visualization-table td {
-    padding: 10px !important;
+    padding: 4px !important;
 }
 
 .google-visualization-table-type-number {
