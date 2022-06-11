@@ -193,4 +193,6 @@ jQuery(document).ready(function(){
     setNewQueryStringOnRefreshButton();
     enableAdmins();
 
+    jQuery("span.age").text(agegroup);
+
 });
