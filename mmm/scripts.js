@@ -36,13 +36,13 @@ function drawFixtures() {
     var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Fixtures&agegroup="+agegroup;
     var table = new google.visualization.Table(document.getElementById('table_fixtures'));
     var dataTable = new google.visualization.DataTable();
-    dataTable.addColumn('string', 'Time');
-    dataTable.addColumn('string', 'Group');
+    dataTable.addColumn('string', 'T');
+    dataTable.addColumn('string', 'G');
     dataTable.addColumn('string', 'Pitch');
     dataTable.addColumn('string', 'Home');
     dataTable.addColumn('string', '');
     dataTable.addColumn('string', 'Away');
-    dataTable.addColumn('string', '');
+    //dataTable.addColumn('string', '');
 
     var leagueTable = [];
     $.getJSON( liveUrl , function( data ) {
@@ -51,7 +51,7 @@ function drawFixtures() {
                 // nothing
 
             } else {
-                leagueTable.push( team );
+                leagueTable.push( [team[0],team[1],team[2],team[3],'v',team[5]] );
 
             }
         });
