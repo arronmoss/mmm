@@ -119,11 +119,7 @@ function drawTableB() {
     });
 }
 
-
-
-
 jQuery(document).ready(function(){
-
     // Wait for google tables to appear in DOM
     var waitForEl = function(selector, callback) {
         if (jQuery(selector).length) {
@@ -156,12 +152,6 @@ jQuery(document).ready(function(){
         }
     }
 
-    function enableAdmins() {
-        // checks required, URL query sets cookie?
-        $(".google-visualization-table-type-number.google-visualization-table-td").attr("contenteditable","true");
-
-    }
-
     function addClassesToTablesForFlags() {
         var teamNameInTable = jQuery('.google-visualization-table-td');
         jQuery(teamNameInTable).each(function(){
@@ -188,8 +178,6 @@ jQuery(document).ready(function(){
     }
 
     setNewQueryStringOnRefreshButton();
-    enableAdmins();
-
     jQuery("span.age").text(agegroup);
 
 });
