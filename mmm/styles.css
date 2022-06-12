@@ -166,6 +166,16 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
     margin: 10px 10px 20px 10px;
 }
 
+
+#table_fixtures img {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
 .table-wrapper > span {
 	display: block;
     text-align: center;
