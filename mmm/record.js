@@ -7,7 +7,7 @@ google.charts.setOnLoadCallback(drawFixtureReport);
 
 var allGamesPlayed = true;
 var today = new Date();
-var nowtime = today.getHours() + ":" + today.getMinutes();
+var nowtime = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes() ;
 
 if(typeof document.location.href.split("time=")[1]==='string') {
     var hour = document.location.href.split("time=")[1]
