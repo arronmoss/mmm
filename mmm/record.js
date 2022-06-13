@@ -5,11 +5,17 @@ console.log(agegroup);
 google.charts.load('current', {'packages':['table']});
 google.charts.setOnLoadCallback(drawFixtureReport);
 
-
 var allGamesPlayed = true;
-
 var today = new Date();
 var nowtime = today.getHours() + ":" + today.getMinutes();
+
+if(typeof document.location.href.split("time=")[1]==='string') {
+    var hour = document.location.href.split("time=")[1]
+    console.log("we are debugging, setting future hour to "+ hour);
+    var nowtime = hour +':00';
+
+}
+
 
 
 function drawFixtureReport() {
