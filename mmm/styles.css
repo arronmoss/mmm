@@ -220,6 +220,8 @@ svg g path[stroke='#b7b7b7'] {stroke-width: 0px !important;}
     padding-left: 32px !important;
 }
 
+a.players-list { color:steelblue; }
+
 
 .France-flag:before {
 	background: url('https://buxtonjfc.uk/mmm/images/flags/france.png');
