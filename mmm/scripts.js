@@ -204,4 +204,9 @@ jQuery(document).ready(function(){
     setNewQueryStringOnRefreshButton();
     jQuery("span.age").text(agegroup);
 
+    jQuery("a.players-list").attr("href", '/mmm/pdf/'+agegroup+'-az.pdf');
+    jQuery("a.team-list").attr("href", '/mmm/pdf/'+agegroup+'-teamlist.pdf');
+
+
+
 });
