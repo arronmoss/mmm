@@ -169,6 +169,10 @@ jQuery(document).ready(function(){
             console.log('all games NOT played');
         } else {
             jQuery('#finals').show();
+            jQuery('#table_fixtures').hide();
+            jQuery('.fixtures-title').hide();
+
+
         }
     }
 
