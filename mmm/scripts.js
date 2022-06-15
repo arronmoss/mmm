@@ -4,7 +4,6 @@ console.log(agegroup);
 
 google.charts.load('current', {'packages':['table']});
 google.charts.setOnLoadCallback(drawFixtures);
-//google.charts.setOnLoadCallback(drawTable('B'));
 google.charts.setOnLoadCallback(drawTableA);
 google.charts.setOnLoadCallback(drawTableB);
 google.charts.setOnLoadCallback(drawTableFinals);
@@ -15,16 +14,37 @@ function drawTableFinals() {
     var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table="+ agegroup +"-Finals";
     var table = new google.visualization.Table(document.getElementById('table_finals'));
     var dataTable = new google.visualization.DataTable();
-    dataTable.addColumn('string', 'Team');
-    dataTable.addColumn('number', 'Score');
-    dataTable.addColumn('number', 'Score');
-    dataTable.addColumn('string', 'Team');
-
     var leagueTable = [];
+    var finalsComplete = false;
+    console.log('blh');
     $.getJSON( liveUrl , function( data ) {
         $.each( data, function( key, team ) {
-            leagueTable.push( team );
+            console.log(typeof team[1]);
+
+            if(typeof team[1]==='number') {
+                // scores are in
+                console.log('finalsComplete');
+                leagueTable.push( team );
+                finalsComplete = true;
+            } else { // string
+                console.log('finals inComplete');
+                leagueTable.push( [team[0],'v',team[3]] );
+            }
+
         });
+        console.log(leagueTable);
+
+        dataTable.addColumn('string', 'Team');
+        if(finalsComplete === true) {
+            // scores are in
+            console.log('finalsComplete');
+            dataTable.addColumn('number', 'Score');
+            dataTable.addColumn('number', 'Score');
+        } else {
+            dataTable.addColumn('string', '');
+        }
+        dataTable.addColumn('string', 'Team');
+
         dataTable.addRows(leagueTable);
         table.draw(dataTable, {showRowNumber: false, width: '100%', height: '50%'});
     });
