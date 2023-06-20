@@ -9,9 +9,11 @@ google.charts.setOnLoadCallback(drawTableB);
 google.charts.setOnLoadCallback(drawTableFinals);
 
 var allGamesPlayed = true;
+var dataUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec";
 
 function drawTableFinals() {
-    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table="+ agegroup +"-Finals";
+    // 2023 URL https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec
+    var liveUrl = "${dataUrl}?table="+ agegroup +"-Finals";
     var table = new google.visualization.Table(document.getElementById('table_finals'));
     var dataTable = new google.visualization.DataTable();
     var leagueTable = [];
