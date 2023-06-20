@@ -41,16 +41,16 @@ function drawFixtureReport() {
             console.log(team);
             var kotime = team[0]+':00';
 
-            if (nowtime > kotime) {
+            //if (nowtime > kotime) {
                 console.log('Time is in the past, good to report scores');
-                if(team[4]==='' && team[6]==='') {
+                //if(team[4]==='' && team[6]==='') {
                     // Only push the score sheet to UX if scores empty
                     team[4]=null;team[6]=null;
                     leagueTable.push( [id,team[0],team[3],team[4],team[5],team[6],'<button class="button" style="width:100%;">SAVE</button>'] );
-                }
-            } else {
-                console.log('dont show result');
-            }
+                //}
+            //} else {
+            //    console.log('dont show result');
+            //}
             id++; // increment the ID so we know which row to post back to
 
         });
