@@ -13,13 +13,11 @@ if(typeof document.location.href.split("time=")[1]==='string') {
     var hour = document.location.href.split("time=")[1]
     console.log("we are debugging, setting future hour to "+ hour);
     var nowtime = hour +':00';
-
 }
 
-
-
 function drawFixtureReport() {
-    var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=ScoreReport&agegroup="+agegroup;
+
+    var liveUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec?table=ScoreReport&agegroup="+agegroup;
     var table = new google.visualization.Table(document.getElementById('table_fixtures'));
     var dataTable = new google.visualization.DataTable();
 
@@ -81,14 +79,10 @@ function drawFixtureReport() {
 
 
 
-
         });
         $(document).on("click", "a.remove" , function() {
             $(this).parent().remove();
         });
-
-
-
     });
 }
 
