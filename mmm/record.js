@@ -68,7 +68,7 @@ function drawFixtureReport() {
             var awayscore = $(html[5]).text();
             console.log(typeof homescore);
             console.log(typeof awayscore);
-            $.post( "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec",
+            $.post( "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec",
                 { id: $(html[0]).text(),
                     home: homescore,
                     away: awayscore,
