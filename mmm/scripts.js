@@ -54,7 +54,7 @@ function drawTableFinals() {
 
 
 function drawFixtures() {
-    var liveUrl = `${dataUrl}?table=fixtures&ageground=${agegroup}`;
+    var liveUrl = `${dataUrl}?table=fixtures&agegroup=${agegroup}`;
     //var liveUrl = "https://script.google.com/macros/s/AKfycbx4uriTLlVllJfZG0TMXTww1T90JqQJyV1D2C7QbvoMWT29KJk/exec?table=Fixtures&agegroup="+agegroup;
     var table = new google.visualization.Table(document.getElementById('table_fixtures'));
     var dataTable = new google.visualization.DataTable();
