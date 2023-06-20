@@ -12,8 +12,7 @@ var allGamesPlayed = true;
 var dataUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec";
 
 function drawTableFinals() {
-    // 2023 URL https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec
-    var liveUrl = "${dataUrl}?table="+ agegroup +"-Finals";
+    var liveUrl = `${dataUrl}?table=${agegroup}-Finals`;
     var table = new google.visualization.Table(document.getElementById('table_finals'));
     var dataTable = new google.visualization.DataTable();
     var leagueTable = [];
