@@ -52,7 +52,6 @@ function drawFixtureReport() {
             //    console.log('dont show result');
             //}
             id++; // increment the ID so we know which row to post back to
-
         });
         dataTable.addRows(leagueTable);
         table.draw(dataTable, {allowHtml:true, showRowNumber: false, width: '100%', height: '50%'});
@@ -63,7 +62,6 @@ function drawFixtureReport() {
             console.log('diddly');
             console.log($(this).parent().parent().html());
             html = $.parseHTML( $(this).parent().parent().html() )
-            //
             var homescore = $(html[3]).text();
             var awayscore = $(html[5]).text();
             console.log(typeof homescore);
@@ -74,11 +72,9 @@ function drawFixtureReport() {
                     away: awayscore,
                     agegroup: "Mini"})
                 .done(function( data ) {
-                    alert( "Data Loaded: " + data );
+                    alert( "Scores Saved, well done me ewd!"  );
+                    //alert( "Scores Saved to  Loaded: " + data );
                 });
-
-
-
         });
         $(document).on("click", "a.remove" , function() {
             $(this).parent().remove();
