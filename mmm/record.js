@@ -1,5 +1,6 @@
 var agegroup = document.location.href.split('/').pop();
 agegroup = agegroup.split('.').shift();
+agegroup = agegroup.split('-').shift();
 console.log(agegroup);
 
 google.charts.load('current', {'packages':['table']});
@@ -70,7 +71,7 @@ function drawFixtureReport() {
                 { id: $(html[0]).text(),
                     home: homescore,
                     away: awayscore,
-                    agegroup: "Mini"})
+                    agegroup: agegroup})
                 .done(function( data ) {
                     alert( "Scores Saved, well done me ewd!"  );
                     //alert( "Scores Saved to  Loaded: " + data );
@@ -130,7 +131,6 @@ jQuery(document).ready(function(){
                 jQuery(this).addClass('flag');
                 var teamName = jQuery(this).html();
                 var teamNameClass = teamName + '-flag';
-                //console.log(teamName);
                 jQuery(this).addClass(teamNameClass);
             }
         });
