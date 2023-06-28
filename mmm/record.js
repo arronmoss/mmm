@@ -1,6 +1,5 @@
 var agegroup = document.location.href.split('/').pop();
 agegroup = agegroup.split('.').shift();
-agegroup = agegroup.split('-').shift();
 console.log(agegroup);
 
 google.charts.load('current', {'packages':['table']});
@@ -71,7 +70,8 @@ function drawFixtureReport() {
                 { id: $(html[0]).text(),
                     home: homescore,
                     away: awayscore,
-                    agegroup: agegroup})
+                    agegroup: agegroup.split('-').shift()
+                })
                 .done(function( data ) {
                     alert( "Scores Saved, well done me ewd!"  );
                     //alert( "Scores Saved to  Loaded: " + data );
