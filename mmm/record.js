@@ -15,6 +15,9 @@ if(typeof document.location.href.split("time=")[1]==='string') {
     var nowtime = hour +':00';
 }
 
+document.getElementById("agegroup").innerHTML = agegroup.split('-').shift();
+
+
 function drawFixtureReport() {
 
     var liveUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec?table=ScoreReport&agegroup="+agegroup;
