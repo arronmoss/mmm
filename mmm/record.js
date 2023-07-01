@@ -68,8 +68,8 @@ function drawFixtureReport() {
             console.log(typeof awayscore);
             $.post( "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec",
                 { id: $(html[0]).text(),
-                    home: homescore,
-                    away: awayscore,
+                    home: parseInt(homescore),
+                    away: parseInt(awayscore),
                     agegroup: agegroup.split('-').shift()
                 })
                 .done(function( data ) {
