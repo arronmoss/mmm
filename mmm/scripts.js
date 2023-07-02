@@ -20,10 +20,7 @@ if(redirectagegroup==='Mini') {
 } else {
     var switchgroup = 'Mini';
 }
-window.setTimeout(window.location.href = `https://buxtonjfc.uk/mmm/${switchgroup}.html?refresh=${timer}`,timer);
-
-
-
+setTimeout(function(){location.href=`https://buxtonjfc.uk/mmm/${switchgroup}.html?refresh=${timer}`} , 10000); 
 
 function drawTableFinals() {
     var liveUrl = `${dataUrl}?table=${agegroup}-Finals`;
