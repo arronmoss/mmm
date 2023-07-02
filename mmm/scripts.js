@@ -30,7 +30,7 @@ function drawTableFinals() {
     var dataTable = new google.visualization.DataTable();
     var leagueTable = [];
     var finalsComplete = false;
-    console.log('blh');
+    //console.log('blh');
     $.getJSON( liveUrl , function( data ) {
         $.each( data, function( key, team ) {
             console.log(typeof team[1]);
