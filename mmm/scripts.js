@@ -16,10 +16,11 @@ if(document.location.search.includes('?refresh='))
     var timer = document.location.search.replace("?refresh=", "");
 if(timer<1000) timer = 1000;
 if(redirectagegroup==='Mini') {
-    window.setTimeout(window.location.href = `https://buxtonjfc.uk/mmm/Junior.html?refresh=${timer}`,timer);
+    var switchgroup = 'Senior';
 } else {
-    window.setTimeout(window.location.href = `https://buxtonjfc.uk/mmm/Junior.html?refresh=${timer}`,timer);
+    var switchgroup = 'Mini';
 }
+window.setTimeout(window.location.href = `https://buxtonjfc.uk/mmm/${switchgroup}.html?refresh=${timer}`,timer);
 
 
 
