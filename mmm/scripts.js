@@ -14,10 +14,11 @@ var dataUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpR
 var redirectagegroup = agegroup.split('-').shift();
 if(document.location.search.includes('?refresh='))
     var timer = document.location.search.replace("?refresh=", "");
+if(timer<1000) timer = 1000;
 if(redirectagegroup==='Mini') {
-    window.setTimeout(window.location.href = "https://buxtonjfc.uk/mmm/Mini.html?refresh="+timer,timer);
+    window.setTimeout(window.location.href = `https://buxtonjfc.uk/mmm/Junior.html?refresh=${timer}`,timer);
 } else {
-    window.setTimeout(window.location.href = "https://buxtonjfc.uk/mmm/Junior.html?refresh="+timer,timer);
+    window.setTimeout(window.location.href = `https://buxtonjfc.uk/mmm/Junior.html?refresh=${timer}`,timer);
 }
 
 
