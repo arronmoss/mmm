@@ -14,14 +14,13 @@ var dataUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpR
 var redirectagegroup = agegroup.split('-').shift();
 if(document.location.search.includes('?refresh=')) {
     var timer = document.location.search.replace("?refresh=", "");
-    var timer = timer * 100;
-    if(timer<1000) timer = 50000;
+    var refresh = timer * 100;
     if(redirectagegroup==='Mini') {
         var switchgroup = 'Senior';
     } else {
         var switchgroup = 'Mini';
     }
-    setTimeout(function(){location.href=`https://buxtonjfc.uk/mmm/${switchgroup}.html?refresh=${timer}`} , 50000); 
+    setTimeout(function(){location.href=`https://buxtonjfc.uk/mmm/${switchgroup}.html?refresh=${refresh}`} , 50000); 
 
 
 
