@@ -2,6 +2,24 @@ var agegroup = document.location.href.split('/').pop();
 agegroup = agegroup.split('.').shift();
 console.log(agegroup);
 
+
+$(window).load(function() {
+
+var redirectagegroup = agegroup.split('-').shift();
+
+if(document.location.search==='?refresh=true')
+    if(redirectagegroup==='Mini') {
+        window.setTimeout(window.location.href = "https://buxtonjfc.uk/mmm/Mini.html?refresh=true",5000);
+    } else {
+        window.setTimeout(window.location.href = "https://buxtonjfc.uk/mmm/Junior.html?refresh=true",5000);
+    }
+
+});
+
+
+
+
+
 google.charts.load('current', {'packages':['table']});
 google.charts.setOnLoadCallback(drawFixtureReport);
 
