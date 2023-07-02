@@ -11,6 +11,18 @@ google.charts.setOnLoadCallback(drawTableFinals);
 var allGamesPlayed = true;
 var dataUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec";
 
+var redirectagegroup = agegroup.split('-').shift();
+if(document.location.search.includes('?refresh='))
+    let timer = document.location.search.replace("?refresh=", "");
+if(redirectagegroup==='Mini') {
+    window.setTimeout(window.location.href = "https://buxtonjfc.uk/mmm/Mini.html?refresh="+timer,timer);
+} else {
+    window.setTimeout(window.location.href = "https://buxtonjfc.uk/mmm/Junior.html?refresh="+timer,timer);
+}
+
+
+
+
 function drawTableFinals() {
     var liveUrl = `${dataUrl}?table=${agegroup}-Finals`;
     var table = new google.visualization.Table(document.getElementById('table_finals'));
