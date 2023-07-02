@@ -13,7 +13,7 @@ var dataUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpR
 
 var redirectagegroup = agegroup.split('-').shift();
 if(document.location.search.includes('?refresh='))
-    let timer = document.location.search.replace("?refresh=", "");
+    var timer = document.location.search.replace("?refresh=", "");
 if(redirectagegroup==='Mini') {
     window.setTimeout(window.location.href = "https://buxtonjfc.uk/mmm/Mini.html?refresh="+timer,timer);
 } else {
