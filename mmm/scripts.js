@@ -9,7 +9,8 @@ google.charts.setOnLoadCallback(drawTableB);
 google.charts.setOnLoadCallback(drawTableFinals);
 
 var allGamesPlayed = true;
-var dataUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec";
+// 2024 https://script.google.com/macros/s/AKfycbyvuWoa_KY8W624lHz593SKcd1Gkm1LZYf1niU4PEotqK_heUZky4IyL-brMU-IvWd0/exec
+var dataUrl = "https://script.google.com/macros/s/AKfycbyvuWoa_KY8W624lHz593SKcd1Gkm1LZYf1niU4PEotqK_heUZky4IyL-brMU-IvWd0/exec";
 
 var redirectagegroup = agegroup.split('-').shift();
 if(document.location.search.includes('?refresh=')) {
