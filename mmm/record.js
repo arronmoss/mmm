@@ -17,7 +17,7 @@ if(typeof document.location.href.split("time=")[1]==='string') {
 
 function drawFixtureReport() {
 
-    var liveUrl = "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec?table=ScoreReport&agegroup="+agegroup;
+    var liveUrl = "https://script.google.com/macros/s/AKfycbyvuWoa_KY8W624lHz593SKcd1Gkm1LZYf1niU4PEotqK_heUZky4IyL-brMU-IvWd0/exec?table=ScoreReport&agegroup="+agegroup;
     var table = new google.visualization.Table(document.getElementById('table_fixtures'));
     var dataTable = new google.visualization.DataTable();
 
@@ -66,7 +66,7 @@ function drawFixtureReport() {
             var awayscore = $(html[5]).text();
             console.log(typeof homescore);
             console.log(typeof awayscore);
-            $.post( "https://script.google.com/macros/s/AKfycbxg1MzLm6uVpMENFW5PcwKCpRtNcUXJkkETM741taPnUybHsgXJ_d6ejPwZmD3uKBPK5w/exec",
+            $.post( "https://script.google.com/macros/s/AKfycbyvuWoa_KY8W624lHz593SKcd1Gkm1LZYf1niU4PEotqK_heUZky4IyL-brMU-IvWd0/exec",
                 { id: $(html[0]).text(),
                     home: parseInt(homescore),
                     away: parseInt(awayscore),
