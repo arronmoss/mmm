@@ -209,6 +209,7 @@ jQuery(document).ready(function(){
                 contents==='Ireland' ||
                 contents==='Spain' ||
                 contents==='France' ||
+                contents==='Italy' ||
                 contents==='Brazil' ||
                 contents==='Portugal'
             ) {
